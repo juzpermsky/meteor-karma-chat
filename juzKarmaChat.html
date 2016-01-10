@@ -1,0 +1,64 @@
+<head>
+  <title>juzKarmaChat</title>
+</head>
+
+<body>
+  <h1>Welcome to Karma Chat!</h1>
+  {{> loginButtons}}
+  {{> usersOnline}}
+  {{#if currentUser}}
+    <div class="karma">My Karma is: {{karma}}</div>
+	{{> chatInput}}
+  {{/if}}
+  
+  <div class="messages">
+    {{#each messages}}
+      {{> message}}
+    {{/each}}
+  </div>
+  
+</body>
+
+<template name="message">
+  <div class="message"><a class="username">{{username}}</a>({{formatDate createdAt}}):<span  class="{{#if toMe}} toMe{{/if}}">{{text}}</span>
+    {{#if currentUser}}
+        <div class="thumbsUp{{#if isVoted.up}} voted{{/if}}"></div>{{thumbsUp}}
+ 	    <div class="thumbsDown{{#if isVoted.down}} voted{{/if}}"></div>{{thumbsDown}}
+      	{{#if isOwner}}
+        	<div class="delete"></div>
+ 	    {{/if}}
+    {{/if}} 
+  </div> 
+</template>
+
+<template name="chatInput">
+  <footer class="chat-input">
+  	<form class="new-message">
+      <input class="inputText" type="text" name="text" placeholder="Type message here" >
+  	</form>
+  </footer>
+</template>
+
+<template name="usersOnline">
+<div>
+There are currently {{usersOnline.count}} users online{{#if usersOnline.exists}}:
+  <table>
+  <thead>
+    <tr>
+	    <th>Username</th>
+	    <th>Karma</th>
+    </tr>
+  </thead>
+  <tbody>
+  {{#each usersOnline.list}}
+    {{> onlineUser}}		
+  {{/each}}
+  </tbody>
+  </table>
+{{else}}.{{/if}}
+</div>
+</template>
+
+<template name="onlineUser">
+   <tr><td class="td1"><a class="username">{{getName}}</a></td><td class="td2">{{getKarma}}</td></tr>
+</template>

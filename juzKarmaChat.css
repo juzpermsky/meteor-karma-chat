@@ -1,0 +1,50 @@
+/* CSS declarations go here */
+.delete{
+	background: url('Delete.png') no-repeat;
+    background-size: 16px 16px;
+    background-repeat:no-repeat;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+}
+.thumbsUp{
+	background: url('ThumbsUp.png') no-repeat;
+    background-size: 16px 16px;
+    background-repeat:no-repeat;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+}
+.thumbsDown{
+	background: url('ThumbsDown.png') no-repeat;
+    background-size: 16px 16px;
+    background-repeat:no-repeat;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+}
+.voted{
+	background-color: #ccc;
+}
+.inputText{
+	width: 500px;
+}
+.username{
+	text-decoration: underline;
+	cursor: pointer;
+	color: #54107D;
+}
+th{
+	text-align: left;
+    border-bottom: 2px solid #ddd;
+}
+td{
+	background-color: #dff0d8;
+}
+.td2{
+	text-align: right;
+}
+.toMe{
+	font-weight: bold;
+	color: red;
+}
