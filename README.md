@@ -1,3 +1,2 @@
 # meteor-karma-chat
-Meteor Chat with Karma
-demo page at http://juzkarmachat.meteor.com/
+Meteor Chat with Karma. Demo page at http://juzkarmachat.meteor.com/
